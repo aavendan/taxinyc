@@ -1,3 +1,4 @@
+#coding:latin-1
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,7 +10,7 @@ df = pd.read_csv('dataset/nyc-taxi-mh-bk.csv')
 #  'fare_amount' 'tolls_amount' 'taxes_amount' 'tip_amount' 'payment_amount'
 #  'payment_type']
 
-#día de la semana que se recorre más [12-1830] [1830-0] [0-5] [5-12]
+#d?a de la semana que se recorre m?s [12-1830] [1830-0] [0-5] [5-12]
 
 df["bucket"] = pd.qcut(df["trip_distance"], 100)
 df2 = df[['trip_distance','bucket']].groupby(['bucket']).count()
