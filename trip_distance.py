@@ -1,4 +1,4 @@
-#coding:latin-1
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -17,8 +17,8 @@ df2 = df[['trip_distance','bucket']].groupby(['bucket']).count()
 
 df3 = pd.DataFrame({'bucket':df2['trip_distance'].index, 'count':df2['trip_distance'].values})
 
-topTenUp = df3.sort(['count'], ascending=[0]).head(10)
-topTenDown = df3.sort(['count'], ascending=[0]).tail(10)
+topTenUp = df3.sort_values(['count'], ascending=[0]).head(10)
+topTenDown = df3.sort_values(['count'], ascending=[0]).tail(10)
 
 print(topTenUp)
 print(topTenDown)
